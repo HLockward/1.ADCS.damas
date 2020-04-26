@@ -49,7 +49,7 @@ public class GameTest {
 
     @Test
     public void testRemovePieceAfterNotEatingWithBlackPieces(){
-        this.setGame(Color.WHITE,
+        this.setGame(Color.BLACK,
             "        ",
             "        ",
             "        ",
@@ -58,7 +58,7 @@ public class GameTest {
             "    n   ",
             "     b  ",
             "        ");
-        this.setExpectedGame(Color.BLACK,
+        this.setExpectedGame(Color.WHITE,
             "        ",
             "        ",
             "        ",

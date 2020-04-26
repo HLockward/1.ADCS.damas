@@ -73,5 +73,57 @@ public class GameTest {
         );
     }
 
+    @Test
+    public void testEatingAndNotRemovingBlackPieceWithWhitePieces(){
+        this.setGame(Color.WHITE,
+            "        ",
+            "        ",
+            "   n    ",
+            "    b   ",
+            "        ",
+            "        ",
+            "        ",
+            "        ");
+        this.setExpectedGame(Color.BLACK,
+            "        ",
+            "        ",
+            "  b     ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ");
+        this.expectMove(
+            new Coordinate(4, 5),
+            new Coordinate(2, 3)
+        );
+    }
+
+    @Test
+    public void testEatingAndNotRemovingWhitePieceWithBlackPieces(){
+        this.setGame(Color.BLACK,
+            "        ",
+            "        ",
+            "        ",
+            "  n     ",
+            "   b    ",
+            "        ",
+            "        ",
+            "        ");
+        this.setExpectedGame(Color.WHITE,
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "    n   ",
+            "        ",
+            "        ");
+        this.expectMove(
+            new Coordinate(3, 2),
+            new Coordinate(5, 4)
+        );
+    }
+
 
 }
